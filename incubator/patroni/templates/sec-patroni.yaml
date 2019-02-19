@@ -12,3 +12,9 @@ data:
   password-superuser: {{ .Values.credentials.superuser | b64enc }}
   password-admin: {{ .Values.credentials.admin | b64enc }}
   password-standby: {{ .Values.credentials.standby | b64enc }}
+  {{- if and .Values.walE.enable .Values.walE.s3.enable .Values.walE.s3.secretKey }}
+  aws-secrect-key: {{ .Values.walE.s3.secretKey | b64enc }}
+  {{- end }}
+  {{- if and .Values.walE.enable .Values.walE.swift.enable .Values.walE.swift.password }}
+  swift-password: {{ .Values.walE.swift.password | b64enc }}
+  {{- end }}

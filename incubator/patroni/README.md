@@ -79,11 +79,11 @@ The following table lists the configurable parameters of the patroni chart and t
 | `zookeeper.deployChart`           | Deploy ZooKeeper chart                      | `false`                                             |
 | `zookeeper.hosts`                 | List of ZooKeeper cluster members           | `host1:port1,host2:port,etc...`                     |
 | `walE.enable`                     | Use of Wal-E tool for base backup/restore   | `false`                                             |
+| `walE.s3.enable`                  | Use Amazon S3 for Wal-E backups             | `false` (see values.yaml for configure S3)          |
+| `walE.gcs.enable`                 | Use Google Cloud Storage for Wal-E backups  | `false` (see values.yaml for configure GCS)         |
+| `walE.swift.enable`               | Use Openstack Swift for Wal-E backups       | `false` (see values.yaml for configure Swift)       |
 | `walE.scheduleCronJob`            | Schedule of Wal-E backups                   | `00 01 * * *`                                       |
 | `walE.retainBackups`              | Number of base backups to retain            | `2`                                                 |
-| `walE.s3Bucket:`                  | Amazon S3 bucket used for wal-e backups     | `nil`                                               |
-| `walE.gcsBucket`                  | GCS storage used for Wal-E backups          | `nil`                                               |
-| `walE.kubernetesSecret`           | K8s secret name for provider bucket         | `nil`                                               |
 | `walE.backupThresholdMegabytes`   | Maximum size of the WAL segments accumulated after the base backup to consider WAL-E restore instead of pg_basebackup | `1024` |
 | `walE.backupThresholdPercentage`  | Maximum ratio (in percents) of the accumulated WAL files to the base backup to consider WAL-E restore instead of pg_basebackup | `30` |
 | `resources`                       | Any resources you wish to assign to the pod | `{}`                                                |
