@@ -82,6 +82,7 @@ The following table lists the configurable parameters of the patroni chart and t
 | `walE.s3.enable`                  | Use Amazon S3 for Wal-E backups             | `false` (see values.yaml for configure S3)          |
 | `walE.gcs.enable`                 | Use Google Cloud Storage for Wal-E backups  | `false` (see values.yaml for configure GCS)         |
 | `walE.swift.enable`               | Use Openstack Swift for Wal-E backups       | `false` (see values.yaml for configure Swift)       |
+| `walE.file.enable`                | Use filesystem for Wal-E backups            | `false` (see values.yaml for configure Filepath)    |
 | `walE.scheduleCronJob`            | Schedule of Wal-E backups                   | `00 01 * * *`                                       |
 | `walE.retainBackups`              | Number of base backups to retain            | `2`                                                 |
 | `walE.backupThresholdMegabytes`   | Maximum size of the WAL segments accumulated after the base backup to consider WAL-E restore instead of pg_basebackup | `1024` |

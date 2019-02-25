@@ -137,6 +137,9 @@ spec:
         - name: SWIFT_ENDPOINT_TYPE
           value: {{ .Values.walE.swift.endpointType | quote }}
         {{- end }}
+        {{else if .Values.walE.file.enable }}
+        - name: WALE_FILE_PREFIX
+          value: {{ .Values.walE.file.path | quote }}
         {{- end }}
         {{- if .Values.walE.backupThresholdMegabytes }}
         - name: WALE_BACKUP_THRESHOLD_MEGABYTES
